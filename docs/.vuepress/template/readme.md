@@ -8,7 +8,7 @@ actionLink: /guide
 footer: MIT Licensed | Copyright © 2021 mudas
 features:
 - title: 简洁精悍
-  details: 不依赖任何第三方库，构建后文件大小仅几kb。
+  details: 不依赖任何第三方库，构建后文件大小仅几kb，测试用例全覆盖。
 - title: 支持 ES6
   details: 构建 ES6 包 validate.esm.js，支持 ES6 tree-shaking。
 - title: 支持力度

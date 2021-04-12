@@ -30,9 +30,9 @@ isEmail('aosnow@yeah.net');
 
 Or direct reference to regular:
 ```js
-import {Reg} from '@mudas/validate';
+import {Email} from '@mudas/validate';
 
-Reg.Email.test('aosnow@yeah.net');
+Email.test('aosnow@yeah.net');
 // => true
 ```
 

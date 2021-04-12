@@ -1,24 +1,8 @@
 // ------------------------------------------------------------------------------
-// name: validater
+// name: validater.d
 // author: mudas( mschool.tech )
-// created: 2021/4/12 2:04
+// created: 2021/4/12
 // ------------------------------------------------------------------------------
-
-import {
-  AbsoluteURL,
-  BankCard,
-  Base64URL,
-  CnName,
-  DataURL,
-  Email,
-  IDCard, InternationalPhone,
-  IPAddress, IPURL,
-  Numeric,
-  Phone,
-  RelativeURL,
-  Telephone,
-  UserName
-} from './regexp';
 
 /**
  * 验证是否必填项，且是否可为空值
@@ -28,11 +12,7 @@ import {
  * @param {Boolean|undefined} [required] 是否必填开关
  * @return {Boolean} 验证结果
  */
-export function isRequired(value, required) {
-  return typeof required !== 'boolean'
-         || !required
-         || (required && value !== '' && value !== undefined && value !== null);
-}
+export function isRequired(value, required): boolean;
 
 /**
  * 是否为数字字符串（包含正数、负数、小数）
@@ -48,9 +28,7 @@ export function isRequired(value, required) {
  * isNumeric('-1.25');
  * // => true
  */
-export function isNumeric(value) {
-  return Numeric.test(String(value));
-}
+export function isNumeric(value): boolean;
 
 /**
  * 是否为以字母开头，后接字母、数字、下划线
@@ -63,9 +41,7 @@ export function isNumeric(value) {
  * isUserName('_aosnow');
  * // => false，不能以下划线 _ 开头，下划线只能出现在除首位的其它位置
  */
-export function isUserName(value) {
-  return UserName.test(String(value));
-}
+export function isUserName(value): boolean;
 
 /**
  * 是否为邮箱地址（包含对中文域名后缀的支持，如 `.公司` 和 `.网络` 等）
@@ -84,9 +60,7 @@ export function isUserName(value) {
  * isEmail('aosnow@yeah');
  * // => false，域名后缀不能省略
  */
-export function isEmail(value) {
-  return Email.test(String(value));
-}
+export function isEmail(value): boolean;
 
 /**
  * 是否为身份证号码
@@ -105,9 +79,7 @@ export function isEmail(value) {
  * isIDCard('130928198905281');
  * // => true，15位身份证号码
  */
-export function isIDCard(value) {
-  return IDCard.test(String(value));
-}
+export function isIDCard(value): boolean;
 
 /**
  * 是否为座机号码
@@ -126,9 +98,7 @@ export function isIDCard(value) {
  * isTelephone('0571 42531245');
  * // => true
  */
-export function isTelephone(value) {
-  return Telephone.test(String(value));
-}
+export function isTelephone(value): boolean;
 
 /**
  * 是否为国内手机号码
@@ -146,9 +116,7 @@ export function isTelephone(value) {
  * isPhone('021-42531245');
  * // => false
  */
-export function isPhone(value) {
-  return Phone.test(String(value));
-}
+export function isPhone(value): boolean;
 
 /**
  * 是否为国际电话号码
@@ -183,9 +151,7 @@ export function isPhone(value) {
  * isInternationalPhone('+81792379925');
  * // => false，日本号码
  */
-export function isInternationalPhone(value) {
-  return InternationalPhone.test(String(value));
-}
+export function isInternationalPhone(value): boolean;
 
 /**
  * 是否为汉字名称
@@ -198,9 +164,7 @@ export function isInternationalPhone(value) {
  * isCnName('我要1个中国人');
  * // => false，不能包含汉字以外的字符
  */
-export function isCnName(value) {
-  return CnName.test(String(value));
-}
+export function isCnName(value): boolean;
 
 /**
  * 是否为银行卡号
@@ -215,27 +179,21 @@ export function isCnName(value) {
  * isBankCard('5124312137817842310');
  * // => true，宁波银行卡
  */
-export function isBankCard(value) {
-  return BankCard.test(String(value));
-}
+export function isBankCard(value): boolean;
 
 /**
  * 是否为 `Base64` 图片地址
  * @param {*} value 需要验证的值
  * @return {Boolean} 验证结果
  */
-export function isDataURL(value) {
-  return DataURL.test(String(value));
-}
+export function isDataURL(value): boolean;
 
 /**
  * 是否为 `Base64` 图片地址（DataURL 的别名）
  * @param {*} value 需要验证的值
  * @return {Boolean} 验证结果
  */
-export function isBase64URL(value) {
-  return Base64URL.test(String(value));
-}
+export function isBase64URL(value): boolean;
 
 /**
  * 是否为绝对地址（一般验证以如 `http://` 开头的网址）
@@ -256,9 +214,7 @@ export function isBase64URL(value) {
  * isAbsoluteURL('/upload/xxx.jpg');
  * // => false
  */
-export function isAbsoluteURL(value) {
-  return AbsoluteURL.test(String(value));
-}
+export function isAbsoluteURL(value): boolean;
 
 /**
  * 是否为相对地址（一般验证本地相对路径）
@@ -277,9 +233,7 @@ export function isAbsoluteURL(value) {
  * isRelativeURL('//a.com/b/c');
  * // => false
  */
-export function isRelativeURL(value) {
-  return RelativeURL.test(String(value));
-}
+export function isRelativeURL(value): boolean;
 
 /**
  * 是否为 IP 地址（IPv4 地址，分成4段由 0-255 数字组合而成）
@@ -297,9 +251,7 @@ export function isRelativeURL(value) {
  * isIPAddress('0.0.0.256');
  * // => false，每段区间为 0-255
  */
-export function isIPAddress(value) {
-  return IPAddress.test(String(value));
-}
+export function isIPAddress(value): boolean;
 
 /**
  * 是否为 IP 网址
@@ -320,9 +272,7 @@ export function isIPAddress(value) {
  * isIPURL('http://www.xxx.com');
  * // => false
  */
-export function isIPURL(value) {
-  return IPURL.test(String(value));
-}
+export function isIPURL(value): boolean;
 
 /**
  * 同时验证多个正则规则是否成立
@@ -339,13 +289,4 @@ export function isIPURL(value) {
  * validate('15258878312', Telephone, Phone, false);
  * // => true
  */
-export function validate(value, ...regexps) {
-  value = String(value);
-  const all = typeof regexps[regexps.length - 1] === 'boolean' ? regexps.pop() : true;
-
-  for (let i = 0; i < regexps.length; i++) {
-    if (all && !regexps[i].test(value)) return false;
-    if (!all && regexps[i].test(value)) return true;
-  }
-  return all;
-}
+export function validate(value, ...regexps): boolean;

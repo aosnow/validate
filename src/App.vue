@@ -2,20 +2,7 @@
   <div id="app">
     <el-page-header title="返回" content="测试"></el-page-header>
 
-    <!--<el-form>-->
-    <!--  <div>-->
-    <!--    <el-input v-model="value"></el-input>-->
-    <!--  </div>-->
-
-    <!--  <div>-->
-    <!--    <el-input v-model="value2"></el-input>-->
-    <!--    <el-alert title="取值：" type="info" :description="repeatValue"></el-alert>-->
-    <!--  </div>-->
-    <!--</el-form>-->
-
-    <!--<pre>{{object}}</pre>-->
-    <!--<el-button @click="clickHandler">merge 值</el-button>-->
-    <!--<el-button @click="handler">执行相关操作</el-button>-->
+    <div>请直接使用 <code>npm run test:unit</code> 测试用例来验证规则是否设计正确。</div>
 
   </div>
 </template>
