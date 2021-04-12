@@ -1,0 +1,76 @@
+{
+  "name": "@mudas/validate",
+  "version": "0.0.1",
+  "description": "A tools library of RegExp validater",
+  "author": "张雄军 <zxj@blibao.cn>",
+  "license": "MIT",
+  "main": "dist/util.common.js",
+  "module": "dist/util.esm.js",
+  "homepage": "https://aosnow.github.io/validate/",
+  "bugs": {
+    "url": "https://github.com/aosnow/validate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aosnow/validate.git"
+  },
+  "keywords": [
+    "validate",
+    "mudas"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "rollup -c",
+    "docs:md": "node ./scripts/jsdoc",
+    "docs:dev": "npm run docs:md && vuepress dev docs --no-cache",
+    "docs:build": "npm run docs:md && vuepress build docs",
+    "deploy": "node ./scripts/gh-pages",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "pub:docs": "npm run docs:build && npm run deploy",
+    "pub": "npm run pub:docs && npm run build && npm publish --access=public"
+  },
+  "typings": "types/index.d.ts",
+  "gitHooks": {
+    "commit-msg": "node scripts/verifyCommitMsg.js"
+  },
+  "files": [
+    "dist",
+    "packages",
+    "types",
+    "package.json",
+    "README.md"
+  ],
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "peerDependencies": {
+    "core-js": ">=3.6.5"
+  },
+  "devDependencies": {
+    "@mudas/reset.css": "0.0.2",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.9.1",
+    "element-ui": "^2.15.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.1.0",
+    "jsdoc-to-markdown": "^6.0.1",
+    "node-sass": "^5.0.0",
+    "rollup": "^2.6.1",
+    "rollup-plugin-delete": "^1.2.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "sass-loader": "^10.1.1",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.12",
+    "vuepress": "^1.8.2"
+  }
+}
